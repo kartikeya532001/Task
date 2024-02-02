@@ -30,27 +30,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      - name: Create EKS Cluster
-        run: |
-          aws eks create-cluster \
-            --name wisecow \
-            --region ap-south-1 \
-            --kubernetes-version 1.21 \
-            --role-arn arn:aws:iam::045500908164:user/AWSCLI \
-            --nodegroup-name ng-1 \
-            --node-type t2.large \
-            --nodes 2 \
-            --nodes-min 1 \
-            --nodes-max 3
-
       - name: Update kubeconfig for EKS cluster
         run: |
           aws eks --region ap-south-1 update-kubeconfig --name wisecow
-        env:
-          AWS_DEFAULT_REGION: ap-south-1
-          AWS_REGION: ap-south-1
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Create Kubernetes Secrets
         run: |
