@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wisecow-d
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wisecow-d
+  template:
+    metadata:
+      labels:
+        app: wisecow-d
+    spec:
+      containers:
+      - name: wisecow-d
+        image: kartikeya532001/wisecow:latest
+        ports:
+        - containerPort: 4499
