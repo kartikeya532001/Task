@@ -37,8 +37,8 @@ jobs:
       - name: Create Kubernetes Secrets
         run: |
           kubectl create secret generic wisecow-tls-secret \
-            --from-file=secret/certificate.crt \
-            --from-file=secret/private-key.key
+            --from-file=secret/tls.crt \
+            --from-file=secret/tls.key
 
       - name: Deploy Docker image to EKS
         run: |
