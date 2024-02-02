@@ -48,7 +48,7 @@ jobs:
 
       - name: Verify deployment
         run: |
-          kubectl get deployment -w
+          kubectl get deployment
           kubectl get pods
           kubectl get services
-          kubectl get ingress
+          
