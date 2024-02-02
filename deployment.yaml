@@ -15,5 +15,6 @@ spec:
       containers:
       - name: wisecow-d
         image: kartikeya532001/wisecow:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 4499
