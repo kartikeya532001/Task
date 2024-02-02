@@ -34,12 +34,6 @@ jobs:
         run: |
           aws eks --region ap-south-1 update-kubeconfig --name wisecow-k
 
-      - name: Create Kubernetes Secrets
-        run: |
-          kubectl create secret generic wisecow-tls-secret \
-            --from-file=secret/tls.crt \
-            --from-file=secret/tls.key
-
       - name: Deploy Docker image to EKS
         run: |
           kubectl apply --force -f deployment.yaml
