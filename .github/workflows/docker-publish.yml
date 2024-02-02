@@ -9,18 +9,7 @@ jobs:
   check-cluster:
     runs-on: ubuntu-latest
     steps:
-      - name: Install eksctl
-        run: |
-          sudo curl --silent --location -o /usr/local/bin/eksctl "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64"
-          sudo chmod +x /usr/local/bin/eksctl
-
-      - name: Check if EKS cluster exists
-        id: check_cluster
-        run: |
-          cluster_name="wisecow"  # Replace with your cluster name
-          eksctl get cluster -n $cluster_name || echo "Cluster does not exist"
-        continue-on-error: true
-
+    
   deploy:
     runs-on: ubuntu-latest
     needs: check-cluster
