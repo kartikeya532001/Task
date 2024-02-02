@@ -32,16 +32,16 @@ jobs:
         aws-region: ap-south-1
 
     - name: Create EKS Cluster
-     run: |
-      aws eks create-cluster \
-      --name wisecow \
-      --region ap-south-1 \
-      --kubernetes-version 1.21 \
-      --nodegroup-name ng-1 \
-      --node-type t2.large \
-      --nodes 2 \
-      --nodes-min 1 \
-      --nodes-max 3
+      run: |
+        aws eks create-cluster \
+          --name wisecow \
+          --region ap-south-1 \
+          --kubernetes-version 1.21 \
+          --nodegroup-name ng-1 \
+          --node-type t2.large \
+          --nodes 2 \
+          --nodes-min 1 \
+          --nodes-max 3
 
     - name: Configure kubectl
       run: |
