@@ -32,7 +32,7 @@ jobs:
 
       - name: Update kubeconfig for EKS cluster
         run: |
-          aws eks --region ap-south-1 update-kubeconfig --name wisecow
+          aws eks --region ap-south-1 update-kubeconfig --name wisecow-k
 
       - name: Create Kubernetes Secrets
         run: |
@@ -48,6 +48,7 @@ jobs:
 
       - name: Verify deployment
         run: |
+          kubectl get deployment -w
           kubectl get pods
           kubectl get services
           kubectl get ingress
