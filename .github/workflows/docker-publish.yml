@@ -38,7 +38,6 @@ jobs:
         run: |
           kubectl apply --force -f deployment.yaml
           kubectl apply --force -f service.yaml
-          kubectl apply --force -f ingress.yaml
 
       - name: Verify deployment
         run: |
