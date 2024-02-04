@@ -32,7 +32,7 @@ jobs:
 
       - name: Update kubeconfig for EKS cluster
         run: |
-          aws eks --region ap-south-1 update-kubeconfig --name wisecow-k
+          aws eks --region ap-south-1 update-kubeconfig --name wisecow-f
 
       - name: Deploy Docker image to EKS
         run: |
