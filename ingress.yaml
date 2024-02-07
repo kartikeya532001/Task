@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: aef6735fdafa24645a5b9f112620f58b-1324664224.ap-south-1.elb.amazonaws.com  # Replace with your Load Balancer URL
+  - host: wisecow.shop  # Replace with your Load Balancer URL
     http:
       paths:
       - path: /
@@ -19,5 +19,4 @@ spec:
               number: 4499  # Update to your application port
   tls:
   - hosts:
-    - aef6735fdafa24645a5b9f112620f58b-1324664224.ap-south-1.elb.amazonaws.com  # Replace with your Load Balancer URL
-    secretName: wisecow-tls-secret  # Replace with your actual TLS secret
+    - wisecow.shop  # Replace with your Load Balancer URL
