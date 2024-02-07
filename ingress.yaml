@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: wisecow.shop  # Replace with your Load Balancer URL
+  - host: wisecow.shop
     http:
       paths:
       - path: /
@@ -15,17 +15,8 @@ spec:
         backend:
           service:
             name: wisecow-s
-            ports:
-            - appProtocol: http
-              name: http
-              port: 80
-              protocol: TCP
-              targetPort: http
-            - appProtocol: https
-              name: https
-              port: 443
-              protocol: TCP
-              targetPort: https
+            port:
+              number: 80
   tls:
   - hosts:
-    - wisecow.shop  # Replace with your Load Balancer URL
+    - wisecow.shop
