@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: wisecow-f
-    app.kubernetes.io/instance: wisecow-k-ng-1-Node
+    app.kubernetes.io/name: wisecow-test
+    app.kubernetes.io/instance: wisecow-test-ng-1-Node
     app.kubernetes.io/managed-by: kubectl
   name: wisecow-d
 spec:
