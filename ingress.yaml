@@ -17,6 +17,18 @@ spec:
             name: wisecow-s
             port:
               number: 4499  # Update to your application port
+  ports:
+  - appProtocol: http
+    name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - appProtocol: https
+    name: https
+    port: 443
+    protocol: TCP
+    targetPort: https
   tls:
   - hosts:
     - wisecow.shop  # Replace with your Load Balancer URL
+
